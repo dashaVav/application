@@ -1,6 +1,6 @@
 package com.example.application.client;
 
-import com.example.application.exception.DealException;
+import com.example.application.exceptions.DealException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import feign.Response;
 import feign.codec.ErrorDecoder;

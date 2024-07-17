@@ -1,4 +1,4 @@
-package com.example.application.exception;
+package com.example.application.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +17,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(DealException.class)
-    public ResponseEntity<ApplicationException> handleConveyorException(DealException e) {
+    public ResponseEntity<ApplicationException> handleDealException(DealException e) {
         return handleTheException(e, HttpStatus.resolve(e.getStatus()));
     }
 

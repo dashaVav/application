@@ -1,7 +1,7 @@
 package com.example.application.service.impl;
 
 import com.example.application.dtos.LoanApplicationRequestDTO;
-import com.example.application.exception.PrescoringException;
+import com.example.application.exceptions.PrescoringException;
 import com.example.application.service.PrescoringService;
 import org.springframework.stereotype.Service;
 
