@@ -1,8 +1,8 @@
 package com.example.application.controller.impl;
 
 import com.example.application.controller.ApplicationController;
-import com.example.application.dtos.LoanApplicationRequestDTO;
-import com.example.application.dtos.LoanOfferDTO;
+import com.example.application.dto.LoanApplicationRequestDTO;
+import com.example.application.dto.LoanOfferDTO;
 import com.example.application.service.DealService;
 import com.example.application.service.PrescoringService;
 import lombok.RequiredArgsConstructor;

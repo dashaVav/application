@@ -1,7 +1,7 @@
 package com.example.application.service;
 
-import com.example.application.dtos.LoanApplicationRequestDTO;
-import com.example.application.dtos.LoanOfferDTO;
+import com.example.application.dto.LoanApplicationRequestDTO;
+import com.example.application.dto.LoanOfferDTO;
 
 import java.util.List;
 

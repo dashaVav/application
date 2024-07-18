@@ -1,8 +1,8 @@
 package com.example.application.service.impl;
 
-import com.example.application.client.DealClient;
-import com.example.application.dtos.LoanApplicationRequestDTO;
-import com.example.application.dtos.LoanOfferDTO;
+import com.example.application.service.DealClient;
+import com.example.application.dto.LoanApplicationRequestDTO;
+import com.example.application.dto.LoanOfferDTO;
 import com.example.application.service.DealService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

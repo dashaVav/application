@@ -1,7 +1,7 @@
-package com.example.application.client;
+package com.example.application.service;
 
-import com.example.application.dtos.LoanApplicationRequestDTO;
-import com.example.application.dtos.LoanOfferDTO;
+import com.example.application.dto.LoanApplicationRequestDTO;
+import com.example.application.dto.LoanOfferDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

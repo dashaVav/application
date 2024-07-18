@@ -1,7 +1,7 @@
 package com.example.application.controller;
 
-import com.example.application.dtos.LoanApplicationRequestDTO;
-import com.example.application.dtos.LoanOfferDTO;
+import com.example.application.dto.LoanApplicationRequestDTO;
+import com.example.application.dto.LoanOfferDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;

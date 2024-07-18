@@ -1,7 +1,7 @@
 package com.example.application.service.impl;
 
-import com.example.application.dtos.LoanApplicationRequestDTO;
-import com.example.application.exceptions.PrescoringException;
+import com.example.application.dto.LoanApplicationRequestDTO;
+import com.example.application.exception.PrescoringException;
 import com.example.application.service.PrescoringService;
 import org.springframework.stereotype.Service;
 
@@ -72,13 +72,13 @@ public class PrescoringServiceImpl implements PrescoringService {
     }
 
     private void validationOfPassportSeries(String passportSeries) {
-        if (!Pattern.compile(String.format("^.{%d}$", 4)).matcher(passportSeries).matches()) {
+        if (!Pattern.compile(String.format("^[\\d]{%d}$", 4)).matcher(passportSeries).matches()) {
             throw new PrescoringException("Passport series must contain 4 digits.");
         }
     }
 
     private void validationOfPassportNumber(String passportNumber) {
-        if (!Pattern.compile(String.format("^.{%d}$", 6)).matcher(passportNumber).matches()) {
+        if (!Pattern.compile(String.format("^[\\d]{%d}$", 6)).matcher(passportNumber).matches()) {
             throw new PrescoringException("Passport number must contain 6 digits.");
         }
     }

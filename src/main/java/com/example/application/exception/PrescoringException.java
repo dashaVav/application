@@ -1,4 +1,4 @@
-package com.example.application.exceptions;
+package com.example.application.exception;
 
 public class PrescoringException extends RuntimeException {
     public PrescoringException(String message) {
