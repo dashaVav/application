@@ -3,7 +3,7 @@ package com.example.application.controller;
 import com.example.application.controller.impl.ApplicationControllerImpl;
 import com.example.application.dto.LoanApplicationRequestDTO;
 import com.example.application.dto.LoanOfferDTO;
-import com.example.application.service.DealService;
+import com.example.application.service.ApplicationService;
 import com.example.application.service.PrescoringService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -27,7 +27,7 @@ public class ApplicationControllerImplTest {
     @Mock
     private PrescoringService prescoringService;
     @Mock
-    private DealService dealService;
+    private ApplicationService applicationService;
 
     @Test
     void testApplicationEndpointOk() {
@@ -46,7 +46,7 @@ public class ApplicationControllerImplTest {
             loanOffers.add(loanOfferDTO);
         }
 
-        when(dealService.getLoanOffers(request)).thenReturn(loanOffers);
+        when(applicationService.getLoanOffers(request)).thenReturn(loanOffers);
 
         ResponseEntity<List<LoanOfferDTO>> result = applicationController.application(request);
         verify(prescoringService, times(1)).validationOfLoanApplicationRequest(request);
@@ -59,7 +59,7 @@ public class ApplicationControllerImplTest {
     @Test
     void testOfferEndpointOk() {
         LoanOfferDTO loanOfferDTO = new LoanOfferDTO();
-        doNothing().when(dealService).applyOffer(loanOfferDTO);
+        doNothing().when(applicationService).applyOffer(loanOfferDTO);
         ResponseEntity<Void> result = applicationController.offer(loanOfferDTO);
         assertThat(result.getStatusCode().value()).isEqualTo(200);
     }

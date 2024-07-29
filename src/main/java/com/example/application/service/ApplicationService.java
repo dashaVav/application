@@ -5,7 +5,7 @@ import com.example.application.dto.LoanOfferDTO;
 
 import java.util.List;
 
-public interface DealService {
+public interface ApplicationService {
     List<LoanOfferDTO> getLoanOffers(LoanApplicationRequestDTO loanApplicationRequest);
 
     Void applyOffer(LoanOfferDTO loanOfferDTO);
