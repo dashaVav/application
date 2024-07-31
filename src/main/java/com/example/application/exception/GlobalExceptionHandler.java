@@ -12,22 +12,21 @@ import java.net.ConnectException;
 public class GlobalExceptionHandler {
     private ResponseEntity<ApplicationException> handleTheException(RuntimeException e, HttpStatus status) {
         return new ResponseEntity<>(
-                new ApplicationException(e.getMessage(), status.value()),
+                new ApplicationException(e.getMessage() + baseUrl, status.value()),
                 status
         );
     }
 
     @ExceptionHandler(DealException.class)
     public ResponseEntity<ApplicationException> handleDealException(DealException e) {
-        System.out.println(e + baseUrl);
         return handleTheException(e, HttpStatus.resolve(e.getStatus()));
     }
 
     @Value("${feign-client.deal-client.base-url}")
     String baseUrl;
+
     @ExceptionHandler(ConnectException.class)
     public ResponseEntity<ApplicationException> handleConnectException(ConnectException e) {
-        System.out.println(e + baseUrl);
         return handleTheException(new RuntimeException("Connection refused."), HttpStatus.SERVICE_UNAVAILABLE);
     }
 
