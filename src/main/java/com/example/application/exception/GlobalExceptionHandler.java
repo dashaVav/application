@@ -19,6 +19,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(DealException.class)
     public ResponseEntity<ApplicationException> handleDealException(DealException e) {
+        System.out.println(e + baseUrl);
         return handleTheException(e, HttpStatus.resolve(e.getStatus()));
     }
 
