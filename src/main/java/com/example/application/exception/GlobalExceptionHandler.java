@@ -12,7 +12,7 @@ import java.net.ConnectException;
 public class GlobalExceptionHandler {
     private ResponseEntity<ApplicationException> handleTheException(RuntimeException e, HttpStatus status) {
         return new ResponseEntity<>(
-                new ApplicationException(e.getMessage() + baseUrl, status.value()),
+                new ApplicationException(e.getMessage() + "+" + baseUrl, status.value()),
                 status
         );
     }
