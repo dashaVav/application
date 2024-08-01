@@ -11,7 +11,7 @@ springdoc:
 
 feign-client:
   deal-client:
-    base-url: http://localhost:8092
+    base-url: http://deal:8092
     application-path: /deal/application
     offer-path: /deal/offer
     retryer:
