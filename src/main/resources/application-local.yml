@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: application
+
+server:
+  port: 8093
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui
+
+feign-client:
+  deal-client:
+    base-url: http://deal:8092
+    application-path: /deal/application
+    offer-path: /deal/offer
+    retryer:
+      period: 100
+      max-period: 10000
+      max-attempts: 2
