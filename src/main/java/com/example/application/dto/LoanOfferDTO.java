@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 public class LoanOfferDTO {
+    @NotNull
     private Long applicationId;
 
     @NotNull
@@ -19,6 +20,7 @@ public class LoanOfferDTO {
     @NotNull
     private BigDecimal totalAmount;
 
+    @NotNull
     private Integer term;
 
     @NotNull
@@ -27,7 +29,9 @@ public class LoanOfferDTO {
     @NotNull
     private BigDecimal rate;
 
+    @NotNull
     private Boolean isInsuranceEnabled;
 
+    @NotNull
     private Boolean isSalaryClient;
 }
