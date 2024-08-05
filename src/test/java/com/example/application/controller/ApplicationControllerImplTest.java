@@ -21,7 +21,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-public class ApplicationControllerImplTest {
+class ApplicationControllerImplTest {
     @InjectMocks
     private ApplicationControllerImpl applicationController;
     @Mock

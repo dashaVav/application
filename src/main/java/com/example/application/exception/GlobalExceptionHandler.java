@@ -11,26 +11,26 @@ import java.net.ConnectException;
 @Slf4j
 @ControllerAdvice
 public class GlobalExceptionHandler {
-    private ResponseEntity<ApplicationException> handleTheException(RuntimeException e, HttpStatus status) {
+    private ResponseEntity<ApplicationError> handleTheException(RuntimeException e, HttpStatus status) {
         log.error("Exception: {} handled normally. Message: {}", e.getClass().getName(), e.getMessage());
         return new ResponseEntity<>(
-                new ApplicationException(e.getMessage(), status.value()),
+                new ApplicationError(e.getMessage(), status.value()),
                 status
         );
     }
 
     @ExceptionHandler(DealException.class)
-    public ResponseEntity<ApplicationException> handleDealException(DealException e) {
+    public ResponseEntity<ApplicationError> handleDealException(DealException e) {
         return handleTheException(e, HttpStatus.resolve(e.getStatus()));
     }
 
     @ExceptionHandler(ConnectException.class)
-    public ResponseEntity<ApplicationException> handleConnectException(ConnectException e) {
+    public ResponseEntity<ApplicationError> handleConnectException(ConnectException e) {
         return handleTheException(new RuntimeException("Service Unavailable"), HttpStatus.SERVICE_UNAVAILABLE);
     }
 
     @ExceptionHandler(PrescoringException.class)
-    public ResponseEntity<ApplicationException> handleBadRequestsException(RuntimeException e) {
+    public ResponseEntity<ApplicationError> handleBadRequestsException(RuntimeException e) {
         return handleTheException(e, HttpStatus.BAD_REQUEST);
     }
 }
