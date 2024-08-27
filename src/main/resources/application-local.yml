@@ -1,6 +1,10 @@
 spring:
   application:
     name: application
+  kafka:
+    bootstrap-servers: localhost:29091
+    topic:
+      audit: audit
 
 server:
   port: 8093

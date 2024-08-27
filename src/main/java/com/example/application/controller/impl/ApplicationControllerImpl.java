@@ -1,5 +1,6 @@
 package com.example.application.controller.impl;
 
+import com.example.application.annotation.AuditAction;
 import com.example.application.controller.ApplicationController;
 import com.example.application.dto.LoanApplicationRequestDTO;
 import com.example.application.dto.LoanOfferDTO;
@@ -20,6 +21,7 @@ public class ApplicationControllerImpl implements ApplicationController {
     private final PrescoringService prescoringService;
     private final ApplicationService applicationService;
 
+    @AuditAction(message = "Validation of loan application.")
     @Override
     public ResponseEntity<List<LoanOfferDTO>> application(LoanApplicationRequestDTO loanApplicationRequest) {
         log.info("/application requested. Body: {}...", LoggerUtils.cut(loanApplicationRequest, 100));
