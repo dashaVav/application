@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: application
+  kafka:
+    bootstrap-servers: kafka:9091
+    topic:
+      audit: audit
+
+server:
+  port: 8093
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui
+
+feign-client:
+  deal-client:
+    base-url: http://deal:8092
+    application-path: /deal/application
+    offer-path: /deal/offer
+    retryer:
+      period: 100
+      max-period: 10000
+      max-attempts: 2
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,prometheus
+  metrics:
+    distribution:
+      percentiles-histogram:
+        "[http.server.requests]": true
+  prometheus:
+    metrics:
+      export:
+        enabled: true
